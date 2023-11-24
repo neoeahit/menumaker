@@ -1,0 +1,40 @@
+body {
+  background-color: #FFFFFF;
+  color: #1C2A33;
+}
+
+#dish {
+  margin-bottom: 12px;
+}
+
+#user-input-header, #dish, #ingredients, #recipe-steps {
+  background-color: #A68F7E;
+  height: auto;
+  padding: 10px;
+}
+
+#ingredients .ingredient span {
+  display: inline;
+  text-transform: capitalize;
+}
+
+#ingredients .ingredient p {
+  display: inline;
+  font-size: 0.95rem;
+}
+
+img#banner {
+  width: 100%;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}

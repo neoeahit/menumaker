@@ -1,0 +1,72 @@
+{
+  "name": "updateDish",
+  "arguments": {
+    "title": "Herb-Crusted Carrot & Parsnip Puree with Mango Chutney",
+    "description": "Savor the mellow sweetness of root vegetables paired expertly with the tropical tang of mango in this elegant dish. A creamy blend of herb-infused carrot and parsnip puree is complemented by a vibrant mango chutney, providing a delightful symphony of flavors that promise to tantalize your palate.",
+    "ingredients": [
+      {
+        "ingredient": "Carrots",
+        "amount": "8 medium"
+      },
+      {
+        "ingredient": "Parsnips",
+        "amount": "8 medium"
+      },
+      {
+        "ingredient": "Mango",
+        "amount": "2 large"
+      },
+      {
+        "ingredient": "Olive oil",
+        "amount": "2 tablespoons"
+      },
+      {
+        "ingredient": "Garlic",
+        "amount": "4 cloves"
+      },
+      {
+        "ingredient": "Fresh thyme",
+        "amount": "1 tablespoon"
+      },
+      {
+        "ingredient": "Fresh rosemary",
+        "amount": "1 tablespoon"
+      },
+      {
+        "ingredient": "Butter",
+        "amount": "4 tablespoons"
+      },
+      {
+        "ingredient": "Heavy cream",
+        "amount": "1/2 cup"
+      },
+      {
+        "ingredient": "White wine vinegar",
+        "amount": "2 tablespoons"
+      },
+      {
+        "ingredient": "Sugar",
+        "amount": "1 tablespoon"
+      },
+      {
+        "ingredient": "Red chili",
+        "amount": "1, finely chopped"
+      },
+      {
+        "ingredient": "Salt",
+        "amount": "To taste"
+      },
+      {
+        "ingredient": "Black pepper",
+        "amount": "To taste"
+      }
+    ],
+    "recipe": [
+      "Peel and roughly chop the carrots and parsnips, then boil in salted water until tender.",
+      "While the vegetables are boiling, peel and dice the mango, and place it in a saucepan with white wine vinegar, sugar, chopped red chili, and a pinch of salt. Cook on low heat until reduced to a chutney consistency.",
+      "Drain the boiled carrots and parsnips and return them to the pot. Add butter, fresh thyme, rosemary, and heavy cream. Mash until smooth and season with salt and pepper.",
+      "Heat olive oil in a small skillet over medium heat. Finely chop the garlic and sauté until fragrant, then stir into the carrot and parsnip puree.",
+      "Serve the herb-crusted carrot and parsnip puree warm, topped with a spoonful of the tangy mango chutney."
+    ]
+  }
+}
