@@ -1,15 +1,10 @@
 import 'openai/shims/node'
 import OpenAI from 'openai'
 
-const CHATGPT_MODEL = process.env.CHATGPT_MODEL || 'gpt-4-1106-preview'
+const CHATGPT_MODEL = process.env.CHATGPT_MODEL || 'gpt-3.5-turbo-1106'
+const PROMPT = 'I am writing descriptions of dishes for a menu. I am going to provide you with a list of ingredients. Based on that list, please come up with a dish that can be created with those ingredients.'
 
 const settings = {
-  messages: [
-    {
-      role: 'system',
-      content: 'I am writing descriptions of dishes for a menu. I am going to provide you with a list of ingredients. Based on that list, please come up with a dish that can be created with those ingredients.'
-    }
-  ],
   functions: [
     {
       name: 'updateDish',
@@ -60,11 +55,18 @@ const settings = {
 }
 
 const send = async (ingredients) => {
-  const openai = new OpenAI()
-  settings.messages.push({
-    role: 'user',
-    content: `The ingredients that will contribute to my dish are: ${ingredients}.`
+  const openai = new OpenAI({
+    timeout: 10000,
+    maxRetries: 3
   })
+  settings.messages = [
+    {
+      role: 'system',
+      content: PROMPT
+    }, {
+      role: 'user',
+      content: `The ingredients that will contribute to my dish are: ${ingredients}.`
+    }]
   const completion = await openai.chat.completions.create(settings)
   return completion.choices[0].message
 }
