@@ -40,6 +40,11 @@ function App () {
         body: JSON.stringify({ message: inputValue })
       })
       const data = await response.json()
+      if (!response.ok) {
+        setErrorMessage(data.error)
+        return
+      }
+
       updateDish(JSON.parse(data.arguments))
     } catch (error) {
       setErrorMessage(error)
@@ -48,26 +53,37 @@ function App () {
 
   const handleErrorClose = async () => {
     setErrorMessage('')
+    setWaiting(false)
   }
 
   return (
     <div className="App">
-      <ErrorSnackbar id="error-snackbar" message={errorMessage} handleClose={handleErrorClose} />
-      <img id="banner" src={bannerImage} alt="Photo by Anto Meneghini on Unsplash" />
+      <ErrorSnackbar
+        id="error-snackbar"
+        message={errorMessage}
+        handleClose={handleErrorClose}
+      />
+      <img
+        id="banner"
+        src={bannerImage}
+        alt="Photo by Anto Meneghini on Unsplash"
+      />
       <div>&nbsp;</div>
       <Container maxwidth="sm">
-        <HeaderWithInput id="user-input-header" handleSubmit={handleSubmit} submitDisabled={waiting} />
+        <HeaderWithInput
+          id="user-input-header"
+          handleSubmit={handleSubmit}
+          submitDisabled={waiting}
+        />
         <div>&nbsp;</div>
-        { waiting &&
-          <CircularProgress color="success" />
-        }
-        { !waiting && title.length > 0 &&
+        {waiting && <CircularProgress color="success" />}
+        {!waiting && title.length > 0 && (
           <React.Fragment>
             <Dish id="dish" title={title} description={description} />
             <IngredientsList id="ingredients" ingredients={ingredients} />
             <RecipeStepsList id="recipe-steps" recipeSteps={recipeSteps} />
           </React.Fragment>
-        }
+        )}
       </Container>
     </div>
   )

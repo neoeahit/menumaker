@@ -7,8 +7,12 @@ body {
   margin-bottom: 12px;
 }
 
-#user-input-header, #dish, #ingredients, #recipe-steps {
-  background-color: #A68F7E;
+#user-input-header {
+  padding: 10px;
+}
+
+#dish, #ingredients, #recipe-steps {
+  background-color: #e2cdbe;
   height: auto;
   padding: 10px;
 }
