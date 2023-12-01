@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardContent, Typography } from '@material-ui/core/index.js';
+import { Card, CardContent, Typography } from '@mui/material';
 
 function Dish({ id, title, description }) {
   return (

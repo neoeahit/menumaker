@@ -8,8 +8,8 @@ import {
   ListItem,
   ListItemText,
   Typography,
-} from '@material-ui/core/index.js';
-import { ExpandMore } from '@material-ui/icons/index.js';
+} from '@mui/material';
+import { ExpandMore } from '@mui/icons-material';
 
 function RecipeStepsList({ id, recipeSteps }) {
   return (

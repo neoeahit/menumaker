@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
+import {
+  ThemeProvider,
+  createMuiTheme,
+  Container,
+  CircularProgress,
+} from '@mui/material';
+
 import HeaderWithInput from './components/HeaderWithInput.js';
 import IngredientsList from './components/IngredientsList.js';
 import RecipeStepsList from './components/RecipeStepsList.js';
 import Dish from './components/Dish.js';
 import ErrorSnackbar from './components/ErrorSnackbar.js';
-import { Container, CircularProgress } from '@material-ui/core/index.js';
 import './App.css';
 import bannerImage from './banner-image.jpg';
+
+const theme = createMuiTheme();
 
 function App() {
   const [title, setTitle] = useState('');
@@ -57,35 +65,37 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <ErrorSnackbar
-        id="error-snackbar"
-        message={errorMessage}
-        handleClose={handleErrorClose}
-      />
-      <img
-        id="banner"
-        src={bannerImage}
-        alt="Photo by Anto Meneghini on Unsplash"
-      />
-      <div>&nbsp;</div>
-      <Container maxwidth="sm">
-        <HeaderWithInput
-          id="user-input-header"
-          handleSubmit={handleSubmit}
-          submitDisabled={waiting}
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <ErrorSnackbar
+          id="error-snackbar"
+          message={errorMessage}
+          handleClose={handleErrorClose}
+        />
+        <img
+          id="banner"
+          src={bannerImage}
+          alt="Photo by Anto Meneghini on Unsplash"
         />
         <div>&nbsp;</div>
-        {waiting && <CircularProgress color="success" />}
-        {!waiting && title.length > 0 && (
-          <React.Fragment>
-            <Dish id="dish" title={title} description={description} />
-            <IngredientsList id="ingredients" ingredients={ingredients} />
-            <RecipeStepsList id="recipe-steps" recipeSteps={recipeSteps} />
-          </React.Fragment>
-        )}
-      </Container>
-    </div>
+        <Container maxwidth="sm">
+          <HeaderWithInput
+            id="user-input-header"
+            handleSubmit={handleSubmit}
+            submitDisabled={waiting}
+          />
+          <div>&nbsp;</div>
+          {waiting && <CircularProgress color="success" />}
+          {!waiting && title.length > 0 && (
+            <>
+              <Dish id="dish" title={title} description={description} />
+              <IngredientsList id="ingredients" ingredients={ingredients} />
+              <RecipeStepsList id="recipe-steps" recipeSteps={recipeSteps} />
+            </>
+          )}
+        </Container>
+      </div>
+    </ThemeProvider>
   );
 }
 

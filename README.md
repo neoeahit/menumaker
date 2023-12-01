@@ -34,7 +34,7 @@ Add `OPENAI_API_KEY` (which you will need to obstain from your OpenAI account).
 
 If you want to use a port other than the default (`3000`), add `PORT` environment variable.
 
-If you want to use a different [ChatGPT model](https://platform.openai.com/docs/models/overview) than the default (`gpt-4-1106-preview`), add `CHATGPT_MODEL` environment variable.
+If you want to use a different [ChatGPT model](https://platform.openai.com/docs/models/overview) than the default (`gpt-3.5-turbo-1106`), add `CHATGPT_MODEL` environment variable.
 
 ## Local deploy
 

@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Card,
-  Typography,
-  TextField,
-  Button,
-} from '@material-ui/core/index.js';
+import { Card, Typography, TextField, Button } from '@mui/material';
 
 function HeaderWithInput({ id, submitDisabled, handleSubmit }) {
   const [inputValue, setInputValue] = useState('');

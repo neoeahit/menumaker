@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Snackbar } from '@material-ui/core/index.js';
+import { Snackbar } from '@mui/material';
 
 function ErrorSnackbar({ id, message, handleClose }) {
   return (
