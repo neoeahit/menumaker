@@ -1,5 +1,7 @@
 # Menu Maker
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 This is a Node.js Express API server that also serves a React frontned.
 
 The frontend can be found at `/index.html` (or simply `/`).
@@ -12,19 +14,21 @@ To use this backend, you will need an OpenAI API Key to make calls to the chat c
 
 ## Local setup
 
-This project is set to use Node `v20.9.0`. Install and use this version with `nvm`.
+This project is set to use Node `v20.10.0`. Install and use this version with [`volta`](https://volta.sh).
 
 1. Install dependencies
-```
-$ yarn install
+
+```bash
+yarn install
 ```
 
-2. Make local copy of `.env` and customize
-```
-$ cp .env.template .env
+1. Make local copy of `.env` and customize
+
+```bash
+cp .env.template .env
 ```
 
-3. Edit `.env` to add environment variables
+1. Edit `.env` to add environment variables
 
 Add `OPENAI_API_KEY` (which you will need to obstain from your OpenAI account).
 
@@ -36,14 +40,14 @@ If you want to use a different [ChatGPT model](https://platform.openai.com/docs/
 
 Start API server on (default) port 3000
 
-```
-$ yarn build && yarn start
+```bash
+yarn build && yarn start
 ```
 
 ## Local tests
 
-```
-$ yarn test
+```bash
+yarn test
 ```
 
 ## Heroku deploy

@@ -1,60 +1,60 @@
-import React, { useState } from 'react'
-import HeaderWithInput from './components/HeaderWithInput.js'
-import IngredientsList from './components/IngredientsList.js'
-import RecipeStepsList from './components/RecipeStepsList.js'
-import Dish from './components/Dish.js'
-import ErrorSnackbar from './components/ErrorSnackbar.js'
-import { Container, CircularProgress } from '@material-ui/core/index.js'
-import './App.css'
-import bannerImage from './banner-image.jpg'
+import React, { useState } from 'react';
+import HeaderWithInput from './components/HeaderWithInput.js';
+import IngredientsList from './components/IngredientsList.js';
+import RecipeStepsList from './components/RecipeStepsList.js';
+import Dish from './components/Dish.js';
+import ErrorSnackbar from './components/ErrorSnackbar.js';
+import { Container, CircularProgress } from '@material-ui/core/index.js';
+import './App.css';
+import bannerImage from './banner-image.jpg';
 
-function App () {
-  const [title, setTitle] = useState('')
-  const [waiting, setWaiting] = useState(false)
-  const [description, setDescription] = useState('')
-  const [recipeSteps, setRecipeSteps] = useState([])
-  const [ingredients, setIngredients] = useState([])
-  const [errorMessage, setErrorMessage] = useState('')
+function App() {
+  const [title, setTitle] = useState('');
+  const [waiting, setWaiting] = useState(false);
+  const [description, setDescription] = useState('');
+  const [recipeSteps, setRecipeSteps] = useState([]);
+  const [ingredients, setIngredients] = useState([]);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const updateDish = ({ title, description, recipe, ingredients }) => {
-    setTitle(title)
-    setDescription(description)
-    setRecipeSteps(recipe)
-    setIngredients(ingredients)
-    setWaiting(false)
-    setErrorMessage('')
-  }
+    setTitle(title);
+    setDescription(description);
+    setRecipeSteps(recipe);
+    setIngredients(ingredients);
+    setWaiting(false);
+    setErrorMessage('');
+  };
 
   const handleSubmit = async (inputValue) => {
     if (inputValue.length === 0) {
-      setErrorMessage('Please provide ingredients before submitting the form.')
-      return
+      setErrorMessage('Please provide ingredients before submitting the form.');
+      return;
     }
     try {
-      setWaiting(true)
+      setWaiting(true);
       const response = await fetch('/ingredients', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message: inputValue })
-      })
-      const data = await response.json()
+        body: JSON.stringify({ message: inputValue }),
+      });
+      const data = await response.json();
       if (!response.ok) {
-        setErrorMessage(data.error)
-        return
+        setErrorMessage(data.error);
+        return;
       }
 
-      updateDish(JSON.parse(data.arguments))
+      updateDish(JSON.parse(data.arguments));
     } catch (error) {
-      setErrorMessage(error)
+      setErrorMessage(error);
     }
-  }
+  };
 
   const handleErrorClose = async () => {
-    setErrorMessage('')
-    setWaiting(false)
-  }
+    setErrorMessage('');
+    setWaiting(false);
+  };
 
   return (
     <div className="App">
@@ -86,7 +86,7 @@ function App () {
         )}
       </Container>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

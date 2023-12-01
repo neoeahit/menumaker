@@ -1,30 +1,47 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Accordion, AccordionSummary, AccordionDetails, List, ListItem, ListItemText, Typography } from '@material-ui/core/index.js'
-import { ExpandMore } from '@material-ui/icons/index.js'
+import React from 'react';
+import PropTypes from 'prop-types';
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+} from '@material-ui/core/index.js';
+import { ExpandMore } from '@material-ui/icons/index.js';
 
-function IngredientsList ({ id, ingredients }) {
+function IngredientsList({ id, ingredients }) {
   return (
     <Accordion id={id}>
-      <AccordionSummary expandIcon={<ExpandMore />} aria-controls="ingredients-content">
-        <Typography gutterBottom variant="h5" component="div">Ingredients</Typography>
+      <AccordionSummary
+        expandIcon={<ExpandMore />}
+        aria-controls="ingredients-content"
+      >
+        <Typography gutterBottom variant="h5" component="div">
+          Ingredients
+        </Typography>
       </AccordionSummary>
       <AccordionDetails>
         <List>
           {ingredients.map((value, index) => (
-            <ListItem key={ `ingredient_${index}` } disableGutters>
-              <ListItemText className="ingredient" primary={ value.ingredient } secondary={ `: ${value.amount}`} />
+            <ListItem key={`ingredient_${index}`} disableGutters>
+              <ListItemText
+                className="ingredient"
+                primary={value.ingredient}
+                secondary={`: ${value.amount}`}
+              />
             </ListItem>
           ))}
         </List>
       </AccordionDetails>
     </Accordion>
-  )
+  );
 }
 
 IngredientsList.propTypes = {
   id: PropTypes.string,
-  ingredients: PropTypes.array
-}
+  ingredients: PropTypes.array,
+};
 
-export default IngredientsList
+export default IngredientsList;
