@@ -26,7 +26,7 @@ const settings = {
           ingredients: {
             type: 'array',
             description:
-              'List of all ingredients—both provided and additional ones in the dish you have conceived—capitzlied, along with measurements, that would be needed to make 8 servings on this dish',
+              'List of all ingredients—both provided and additional ones in the dish you have conceived—capitalized, along with measurements, that would be needed to make 8 servings on this dish',
             items: {
               type: 'object',
               properties: {
