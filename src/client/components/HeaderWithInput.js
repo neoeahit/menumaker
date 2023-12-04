@@ -11,7 +11,7 @@ function HeaderWithInput({ id, submitDisabled, handleSubmit }) {
 
   return (
     <Card id={id}>
-      <Typography variant="h3" component="div">
+      <Typography variant="h3" fontWeight={600} component="div">
         Menu Maker
       </Typography>
       <Typography variant="body2">
