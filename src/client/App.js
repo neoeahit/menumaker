@@ -55,7 +55,12 @@ function App() {
         return;
       }
 
-      if (response.headers.get('content-type') !== 'application/json') {
+      if (
+        !response.headers
+          .get('content-type')
+          .toLowerCase()
+          .includes('application/json')
+      ) {
         setErrorMessage('The API returned an unexpected response.');
         return;
       }

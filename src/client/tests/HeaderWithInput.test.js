@@ -11,7 +11,7 @@ describe('HeaderWithInput component', () => {
   test('calls handleSubmit on click', () => {
     const handler = jest.fn();
     renderHeaderWithInput(handler);
-    const button = screen.getByText('Send');
+    const button = screen.getByText('Submit Ingredients');
     fireEvent.click(button);
     expect(handler).toHaveBeenCalledTimes(1);
   });
