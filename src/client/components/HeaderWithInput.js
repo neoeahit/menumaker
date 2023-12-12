@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Card, Typography, TextField, Button } from '@mui/material';
+import { Card, Typography, TextField, Button, Stack } from '@mui/material';
 
 function HeaderWithInput({ id, submitDisabled, handleSubmit }) {
   const [inputValue, setInputValue] = useState('');
@@ -11,32 +11,44 @@ function HeaderWithInput({ id, submitDisabled, handleSubmit }) {
 
   return (
     <Card id={id}>
-      <Typography variant="h3" fontWeight={600} component="div">
-        Menu Maker
-      </Typography>
-      <Typography variant="body2">
-        Enter a list of ingredients, and we&apos;ll come up with a delicious
-        dish for your menu, made from those ingredients!
-      </Typography>
-      <div>&nbsp;</div>
-      <TextField
-        id="ingredients-input"
-        label="Ingredients"
-        multiline
-        minRows={4}
-        variant="outlined"
-        fullWidth
-        value={inputValue}
-        onChange={handleInputChange}
-      />
-      <div>&nbsp;</div>
-      <Button
-        disabled={submitDisabled}
-        variant="contained"
-        onClick={() => handleSubmit(inputValue)}
-      >
-        Send
-      </Button>
+      <Stack spacing={2}>
+        <Typography variant="h3" fontWeight={600} component="div">
+          Menu Maker
+        </Typography>
+        <Typography variant="body2">
+          Enter a list of ingredients, and we&apos;ll come up with a delicious
+          dish for your menu, made from those ingredients!
+        </Typography>
+        <TextField
+          id="ingredients-input"
+          label="Ingredients"
+          multiline
+          minRows={4}
+          variant="outlined"
+          fullWidth
+          value={inputValue}
+          onChange={handleInputChange}
+          onKeyDown={(e) => {
+            const keyCode = e.which || e.keyCode;
+            if (keyCode === 13 && !e.shiftKey) {
+              e.preventDefault();
+              handleSubmit(inputValue);
+              setInputValue('');
+            }
+          }}
+        />
+        <Button
+          disabled={submitDisabled}
+          fullWidth
+          variant="contained"
+          onClick={() => {
+            handleSubmit(inputValue);
+            setInputValue('');
+          }}
+        >
+          Submit Ingredients
+        </Button>
+      </Stack>
     </Card>
   );
 }

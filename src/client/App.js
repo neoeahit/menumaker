@@ -34,22 +34,45 @@ function App() {
     }
     try {
       setWaiting(true);
+
+      // Abort fetch after 10 seconds
+      const controller = new AbortController();
+      const id = setTimeout(() => controller.abort(), 10000);
+
+      // Submit ingredient list to the API
       const response = await fetch('/ingredients', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ message: inputValue }),
+        signal: controller.signal,
       });
+      clearTimeout(id);
+
+      if (!response.ok && response.status === 404) {
+        setErrorMessage('The API is not available. Please try again later.');
+        return;
+      }
+
+      if (response.headers.get('content-type') !== 'application/json') {
+        setErrorMessage('The API returned an unexpected response.');
+        return;
+      }
+
+      // Check if the API returned an error
       const data = await response.json();
+
       if (!response.ok) {
         setErrorMessage(data.error);
         return;
       }
 
-      updateDish(JSON.parse(data.arguments));
+      // Parse the response and update the dish
+      const args = JSON.parse(data.arguments);
+      updateDish(args);
     } catch (error) {
-      setErrorMessage(error);
+      setErrorMessage(error.message);
     }
   };
 
