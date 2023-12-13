@@ -37,7 +37,7 @@ function App() {
 
       // Abort fetch after 10 seconds
       const controller = new AbortController();
-      const id = setTimeout(() => controller.abort(), 10000);
+      const id = setTimeout(() => controller.abort(), 30000);
 
       // Submit ingredient list to the API
       const response = await fetch('/ingredients', {
