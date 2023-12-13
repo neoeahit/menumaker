@@ -1,6 +1,6 @@
 body {
-  background-color: #f5f5f5;
-  color: #1c2a33;
+  background-color: #f1f2f1;
+  color: #260a08;
 }
 
 #dish {
@@ -14,7 +14,7 @@ body {
 #dish,
 #ingredients,
 #recipe-steps {
-  background-color: #e2cdbe;
+  background-color: #cac6a0;
   height: auto;
   padding: 10px;
 }

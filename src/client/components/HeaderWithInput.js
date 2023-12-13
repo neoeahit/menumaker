@@ -15,15 +15,16 @@ function HeaderWithInput({ id, submitDisabled, handleSubmit }) {
         <Typography variant="h3" fontWeight={600} component="div">
           Menu Maker
         </Typography>
-        <Typography variant="body2">
+        <Typography variant="body1">
           Enter a list of ingredients, and we&apos;ll come up with a delicious
           dish for your menu, made from those ingredients!
         </Typography>
         <TextField
           id="ingredients-input"
           label="Ingredients"
+          placeholder='Separate ingredients with commas, e.g. "chicken, rice, beans"'
           multiline
-          minRows={4}
+          minRows={2}
           variant="outlined"
           fullWidth
           value={inputValue}

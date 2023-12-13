@@ -6,7 +6,16 @@ import App from './App.js';
 import './index.css';
 
 const root = createRoot(document.getElementById('root'));
-const theme = createTheme();
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#A62722',
+    },
+    secondary: {
+      main: '#CAC6A0',
+    },
+  },
+});
 
 root.render(
   <React.StrictMode>
