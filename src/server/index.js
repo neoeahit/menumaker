@@ -1,5 +1,5 @@
 import express from 'express';
-import openAI from './openAI.js';
+import AI from './ai.js';
 
 const server = express();
 server.use(express.json());
@@ -15,7 +15,7 @@ server.post('/ingredients', async (req, res) => {
     return;
   }
   try {
-    const completionResponse = await openAI.send(req.body.message);
+    const completionResponse = await AI.send(req.body.message);
     res.json(completionResponse.function_call);
   } catch (error) {
     res.status(500).json({ error: error.message });
