@@ -1,7 +1,7 @@
 {
   "name": "Menu Maker",
   "description": "A web app that generates recipes based on ingredients you have on hand.",
-  "repository": "https://github.com/heroku-demos/menu-maker",
+  "repository": "https://github.com/heroku-reference-apps/menu-maker",
   "keywords": ["nodejs", "ai", "chatgpt", "openai", "react"],
   "environments": {
     "production": {
