@@ -16,7 +16,7 @@ The backend API has a single endpoint. `POST /ingredients` takes a list of ingre
 
 The implementation uses OpenAI ChatGPT functions, which allows us to specify the JSON structure of the data to be returned, which can more easily be passed as arguments directly to a function in our code (or, in this case, to be passed back to the frontend, which will use the arguments for a function call there).
 
-![Architecture](img/architecture.jpeg)
+![Architecture](img/architecture.png)
 
 To use this application, you will need an [OpenAI API Key](https://platform.openai.com/) to make calls to the chat completion API.
 
