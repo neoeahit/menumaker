@@ -1,6 +1,6 @@
 # Menu Maker
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/heroku-reference-apps/menumaker)
 
 A web application that generates recipes based on ingredients you have on hand!
 
