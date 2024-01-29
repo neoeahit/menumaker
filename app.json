@@ -3,14 +3,13 @@
   "description": "A web app that generates recipes based on ingredients you have on hand.",
   "repository": "https://github.com/heroku-reference-apps/menu-maker",
   "keywords": ["nodejs", "ai", "chatgpt", "openai", "react"],
+  "env": {
+    "OPENAI_API_KEY": {
+      "description": "OpenAI API Key",
+      "required": true
+    }
+  },
   "environments": {
-    "production": {
-      "env": {
-        "OPENAI_API_KEY": {
-          "required": true
-        }
-      }
-    },
     "test": {
       "env": {
         "OPENAI_API_KEY": "test_key"
