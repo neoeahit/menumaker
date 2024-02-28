@@ -5,9 +5,7 @@ const server = express();
 server.use(express.json());
 
 server.post('/ingredients', async (req, res) => {
-  if (process.env.NODE_ENV !== 'test') {
-    console.log(`Request to /ingredients received: ${req.body.message}`);
-  }
+  console.log(`Request to /ingredients received: ${req.body.message}`);
   if (typeof req.body.message === 'undefined' || !req.body.message.length) {
     res
       .status(400)
@@ -17,6 +15,7 @@ server.post('/ingredients', async (req, res) => {
   try {
     const completionResponse = await AI.send(req.body.message);
     res.json(completionResponse.function_call);
+    console.log(completionResponse.function_call);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
