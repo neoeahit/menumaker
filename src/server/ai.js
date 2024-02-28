@@ -56,7 +56,7 @@ const settings = {
             },
           },
         },
-        required: ['title', 'description', 'ingredients', 'recipe'],
+        required: ['title', 'description', 'ingredients', 'recipe', 'origin',],
       },
     },
   ],
