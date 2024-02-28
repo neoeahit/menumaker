@@ -23,10 +23,10 @@ const settings = {
             description:
               'Description of the dish, in 2-3 sentences, as it would appear on a fine dining menu',
           },
-	  youtube: {
+	  origin: {
             type: 'string',
             description:
-              'A youtube link for the dish as it would appear on a fine dining menu',
+              'The country of origin of the dish as it would appear on a fine dining menu',
           },
           ingredients: {
             type: 'array',
