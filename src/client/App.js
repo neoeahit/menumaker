@@ -16,7 +16,7 @@ function App() {
   const [description, setDescription] = useState('');
   const [recipeSteps, setRecipeSteps] = useState([]);
   const [ingredients, setIngredients] = useState([]);
-  const [youtubeLink, setYoutubeLink] = useState('');
+  const [origin, setOrigin] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   const updateDish = ({ title, description, recipe, ingredients, youtubeLink }) => {
@@ -24,7 +24,7 @@ function App() {
     setDescription(description);
     setRecipeSteps(recipe);
     setIngredients(ingredients);
-    setYoutubeLink(youtubeLink);
+    setOrigin(origin);
     setWaiting(false);
     setErrorMessage('');
   };
@@ -111,7 +111,7 @@ function App() {
         {waiting && <CircularProgress color="success" />}
         {!waiting && title.length > 0 && (
           <>
-            <Dish id="dish" title={title} description={description} youtube={youtubeLink} />
+            <Dish id="dish" title={title} description={description} origin={origin} />
             <IngredientsList id="ingredients" ingredients={ingredients} />
             <RecipeStepsList id="recipe-steps" recipeSteps={recipeSteps} />
           </>
