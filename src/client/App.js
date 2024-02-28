@@ -19,7 +19,7 @@ function App() {
   const [origin, setOrigin] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const updateDish = ({ title, description, recipe, ingredients, youtubeLink }) => {
+  const updateDish = ({ title, description, recipe, ingredients, origin }) => {
     setTitle(title);
     setDescription(description);
     setRecipeSteps(recipe);
