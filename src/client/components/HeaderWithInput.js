@@ -17,7 +17,7 @@ function HeaderWithInput({ id, submitDisabled, handleSubmit }) {
         </Typography>
         <Typography variant="body1">
           Enter a list of ingredients, and we&apos;ll come up with a delicious
-          dish for your menu, made from those ingredients!
+          dish you can make from those ingredients!
         </Typography>
         <TextField
           id="ingredients-input"
@@ -47,7 +47,7 @@ function HeaderWithInput({ id, submitDisabled, handleSubmit }) {
             setInputValue('');
           }}
         >
-          Submit Ingredients
+          Find me the dish I can make with this!
         </Button>
       </Stack>
     </Card>

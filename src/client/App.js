@@ -16,13 +16,15 @@ function App() {
   const [description, setDescription] = useState('');
   const [recipeSteps, setRecipeSteps] = useState([]);
   const [ingredients, setIngredients] = useState([]);
+  const [youtubeLink, setYoutubeLink] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const updateDish = ({ title, description, recipe, ingredients }) => {
+  const updateDish = ({ title, description, recipe, ingredients, youtubeLink }) => {
     setTitle(title);
     setDescription(description);
     setRecipeSteps(recipe);
     setIngredients(ingredients);
+    setYoutubeLink(youtubeLink);
     setWaiting(false);
     setErrorMessage('');
   };
