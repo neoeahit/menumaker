@@ -10,7 +10,7 @@ function Dish({ id, title, description, youtubeLink }) {
           {title}
         </Typography>
         <Typography variant="body2">{description}</Typography>
-        <Typography variant="body2">{youtubeLink}</Typography>
+        <Typography variant="body2">Youtube: {youtubeLink}</Typography>
       </CardContent>
     </Card>
   );

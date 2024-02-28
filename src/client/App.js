@@ -111,7 +111,7 @@ function App() {
         {waiting && <CircularProgress color="success" />}
         {!waiting && title.length > 0 && (
           <>
-            <Dish id="dish" title={title} description={description} />
+            <Dish id="dish" title={title} description={description} youtube={youtubeLink} />
             <IngredientsList id="ingredients" ingredients={ingredients} />
             <RecipeStepsList id="recipe-steps" recipeSteps={recipeSteps} />
           </>
