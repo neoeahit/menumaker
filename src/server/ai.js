@@ -3,7 +3,7 @@ import OpenAI from 'openai';
 
 const CHATGPT_MODEL = process.env.CHATGPT_MODEL || 'gpt-3.5-turbo-1106';
 const PROMPT =
-  'I am writing descriptions of dishes for a menu. I am going to provide you with a list of ingredients. Based on that list, please come up with a dish that can be created with those ingredients.';
+  'I am writing descriptions of dishes for a menu. I am going to provide you with a list of ingredients. Based on that list, come up with a dish that can be created with those ingredients. If no dish can be formed with those ingredients, then keep adding a new ingredient one at a time to find the next possible dish';
 
 const settings = {
   functions: [
@@ -22,6 +22,11 @@ const settings = {
             type: 'string',
             description:
               'Description of the dish, in 2-3 sentences, as it would appear on a fine dining menu',
+          },
+	  youtube: {
+            type: 'string',
+            description:
+              'A youtube link for the dish as it would appear on a fine dining menu',
           },
           ingredients: {
             type: 'array',
