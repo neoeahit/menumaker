@@ -50,6 +50,7 @@ function App() {
         body: JSON.stringify({ message: inputValue }),
         signal: controller.signal,
       });
+      console.log(response);
       clearTimeout(id);
 
       if (!response.ok && response.status === 404) {
