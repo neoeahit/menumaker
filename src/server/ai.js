@@ -3,7 +3,7 @@ import OpenAI from 'openai';
 
 const CHATGPT_MODEL = process.env.CHATGPT_MODEL || 'gpt-3.5-turbo-1106';
 const PROMPT =
-  'I am writing descriptions of dishes for a menu. I am going to provide you with a list of ingredients. Based on that list, come up with a dish that can be created with those ingredients. If no dish can be formed with those ingredients, then keep adding a new ingredient one at a time to find the next possible dish';
+  'I am writing descriptions of dishes for a menu. I am going to provide you with a list of ingredients. Based on that list, come up with a dish that can be created with those ingredients. If no dish can be formed with those ingredients, then keep adding a new ingredient one at a time to find the next possible dish. Please ensure the user input for the ingredients are edible, if the user inputs anything which is non-edible, please respond by saying the ingredients are not edible.';
 
 const settings = {
   functions: [
