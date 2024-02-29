@@ -9,8 +9,8 @@ function Dish({ id, title, description, origin }) {
         <Typography gutterBottom variant="h4" component="div">
           {title}
         </Typography>
-        <Typography variant="body2">{description}</Typography>
-        <Typography variant="body2">Origin: {origin}</Typography>
+        <Typography variant="body2"><b>Description:</b> {description}</Typography>
+        <Typography variant="body2"><b>Origin: </b> {origin}</Typography>
       </CardContent>
     </Card>
   );

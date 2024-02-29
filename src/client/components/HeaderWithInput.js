@@ -13,7 +13,7 @@ function HeaderWithInput({ id, submitDisabled, handleSubmit }) {
     <Card id={id}>
       <Stack spacing={2}>
         <Typography variant="h3" fontWeight={600} component="div">
-          Menu Maker
+          Suggest me a recepie
         </Typography>
         <Typography variant="body1">
           Enter a list of ingredients, and we&apos;ll come up with a delicious
