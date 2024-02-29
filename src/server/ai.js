@@ -28,6 +28,11 @@ const settings = {
             description:
               'The country of origin of the dish as it would appear on a fine dining menu',
           },
+          timetocook: {
+            type: 'string',
+            description:
+              'The estimated time it would take to make the dish',
+          },
           ingredients: {
             type: 'array',
             description:
@@ -49,14 +54,14 @@ const settings = {
           recipe: {
             type: 'array',
             description:
-              'Ordered list of recipe steps, numbered as "1.", "2.", etc., needed to make this dish',
+              'Ordered list of recipe steps in detail, numbered as "1.", "2.", etc., needed to make this dish',
             items: {
               type: 'string',
               description: 'Recipe step',
             },
           },
         },
-        required: ['title', 'description', 'ingredients', 'recipe', 'origin',],
+        required: ['title', 'description', 'ingredients', 'recipe', 'origin', 'timetocook'],
       },
     },
   ],

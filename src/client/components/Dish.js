@@ -11,6 +11,7 @@ function Dish({ id, title, description, origin }) {
         </Typography>
         <Typography variant="body2"><b>Description:</b> {description}</Typography>
         <Typography variant="body2"><b>Origin: </b> {origin}</Typography>
+        <Typography variant="body2"><b>Time to cook: </b> {timetocook}</Typography>
       </CardContent>
     </Card>
   );
@@ -21,6 +22,7 @@ Dish.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   origin: PropTypes.string,
+  timetocook: PropTypes.string,
 };
 
 export default Dish;

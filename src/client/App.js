@@ -12,6 +12,7 @@ import bannerImage from './banner-image.jpg';
 
 function App() {
   const [title, setTitle] = useState('');
+  const [timetocook, setTimetocook] = useState('');
   const [waiting, setWaiting] = useState(false);
   const [description, setDescription] = useState('');
   const [recipeSteps, setRecipeSteps] = useState([]);
@@ -19,8 +20,9 @@ function App() {
   const [origin, setOrigin] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const updateDish = ({ title, description, recipe, ingredients, origin }) => {
+  const updateDish = ({ title, description, recipe, ingredients, origin, timetocook }) => {
     setTitle(title);
+    setTimetocook(timetocook);
     setDescription(description);
     setRecipeSteps(recipe);
     setIngredients(ingredients);
@@ -112,7 +114,7 @@ function App() {
         {waiting && <CircularProgress color="success" />}
         {!waiting && title.length > 0 && (
           <>
-            <Dish id="dish" title={title} description={description} origin={origin} />
+            <Dish id="dish" title={title} description={description} origin={origin} timetocook={timetocook} />
             <IngredientsList id="ingredients" ingredients={ingredients} />
             <RecipeStepsList id="recipe-steps" recipeSteps={recipeSteps} />
           </>
