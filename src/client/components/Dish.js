@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardContent, Typography } from '@mui/material';
 
-function Dish({ id, title, description, origin }) {
+function Dish({ id, title, description, origin , timetocook}) {
   return (
     <Card id={id}>
       <CardContent>
